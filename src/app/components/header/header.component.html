@@ -1,0 +1,8 @@
+<header>
+  <a href="" class="logo">MyBlog</a>
+  <nav>
+    <a *ngFor="let navItem of navItems" [href]="navItem.url">{{
+      navItem.title
+    }}</a>
+  </nav>
+</header>

@@ -2,4 +2,19 @@
   margin-bottom: 50px;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 20px;
+}
+
+.text h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.text .summary {
+  margin: 10px 0;
+  line-height: 1.5rem;
+  font-size: medium;
 }

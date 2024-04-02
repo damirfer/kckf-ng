@@ -1,8 +1,11 @@
 <header>
   <a href="" class="logo">MyBlog</a>
   <nav>
-    <a *ngFor="let navItem of navItems" [href]="navItem.url">{{
-      navItem.title
-    }}</a>
+    <a
+      *ngFor="let navItem of navItems"
+      routerLinkActive="active"
+      [routerLink]="navItem.url"
+      >{{ navItem.title }}</a
+    >
   </nav>
 </header>

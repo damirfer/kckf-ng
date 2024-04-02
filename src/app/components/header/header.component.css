@@ -9,6 +9,10 @@ header a {
   color: inherit;
 }
 
+.active {
+  background-color: rgba(0, 0, 255, 0.208);
+}
+
 header .logo {
   font-weight: bold;
 }

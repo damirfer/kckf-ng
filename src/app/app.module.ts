@@ -11,10 +11,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { TrimTextPipe } from './pipes/trim-text.pipe';
 import { SinglePostComponent } from './pages/single-post/single-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, PostComponent, LoginComponent, SignUpComponent, HomeComponent, NotFoundComponent, TrimTextPipe, SinglePostComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   exports: [],
   bootstrap: [AppComponent],

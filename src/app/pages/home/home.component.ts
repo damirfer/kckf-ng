@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { IPost } from 'src/app/models/IPost';
 
 @Component({
@@ -25,4 +26,13 @@ export class HomeComponent {
         'https://techcrunch.com/wp-content/uploads/2021/07/GettyImages-1207206237.jpg?w=1390&crop=1',
     },
   ];
+
+  constructor(private router: Router) {
+  }
+
+  navigateToSinglePost(post: IPost) {
+    this.router.navigate(['/post', post.id]);
+  }
+
+
 }

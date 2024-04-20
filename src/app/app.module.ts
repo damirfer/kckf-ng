@@ -13,6 +13,7 @@ import { TrimTextPipe } from './pipes/trim-text.pipe';
 import { SinglePostComponent } from './pages/single-post/single-post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastNoAnimationModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ToastNoAnimationModule.forRoot(),
   ],
   providers: [],
   exports: [],

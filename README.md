@@ -56,7 +56,7 @@ koji kaže da pretraživana stranica ne postoji, te na ovu
 komponentu rutirati sve nepostojeće rute.
  
 Statička lista proizvoda:
- 
+```json
 [
     {
         "id": 1,
@@ -104,3 +104,4 @@ Statička lista proizvoda:
         "type": "Accessories"
     }
 ]
+```

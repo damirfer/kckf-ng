@@ -1,3 +1,25 @@
-<div>
-    <button (click)="navigateToAboutPage()">About</button>
-</div>
+<button (click)="navigateToNew()">Add book</button>
+<table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Publication Year</th>
+        <th>Century</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of bookList">
+        <th>{{book.title}}</th>
+        <td>{{book.author}}</td>
+        <td>{{book.genre}}</td>
+        <td [style.color]="book.publication_year < 1900 ? 'red' : 'green'">{{book.publication_year}}</td>
+        <td>{{book.publication_year | century }}</td>
+        <td>
+            <a [routerLink]="['/details', book.id]">Details</a>
+        </td>
+      </tr>
+    </tbody>
+</table>

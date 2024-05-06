@@ -2,29 +2,25 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { NavComponent } from './components/nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { NewBookComponent } from './pages/new-book/new-book.component';
+import { BookDetailsComponent } from './pages/book-details/book-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CenturyPipe } from './pipes/century.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    NotFoundComponent,
-    NavComponent
+    NewBookComponent,
+    BookDetailsComponent,
+    CenturyPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

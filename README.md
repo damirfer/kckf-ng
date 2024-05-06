@@ -40,6 +40,7 @@ prikazati stoljeće u kojem je napisana knjiga
 
 
 
+```json
 [
   {
     "id": 1,
@@ -77,3 +78,4 @@ prikazati stoljeće u kojem je napisana knjiga
     "publication_year": 1951
   }
 ]
+```

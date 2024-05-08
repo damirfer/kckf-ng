@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ContactComponent } from './pages/contact/contact.component';
+import { ProductComponent } from './pages/product/product.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -16,12 +15,8 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'about',
-    component: AboutComponent
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
+    path: 'product',
+    component: ProductComponent
   },
   {
     path: '**',

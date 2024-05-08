@@ -1,55 +1,63 @@
 import { Injectable } from '@angular/core';
-import { IBook } from '../models/IBook';
-
+import { IMovie } from '../models/IMovie';
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  private data: IBook[] = [
+  private data: IMovie[] = [
     {
       id: 1,
-      title: 'The Great Gatsby',
-      author: 'F. Scott Fitzgerald',
-      genre: 'Fiction',
-      publication_year: 1925,
-    },
-    {
-      id: 2,
-      title: 'To Kill a Mockingbird',
-      author: 'Harper Lee',
-      genre: 'Fiction',
-      publication_year: 1960,
+      movie: 'The Matrix',
+      theater: 'Screen 1',
+      ticketsAvailable: 120,
+      ticketPrice: 10.5,
+      showDate: 'May 10, 2024',
+      showTime: '10:00 AM',
     },
     {
       id: 3,
-      title: '1984',
-      author: 'George Orwell',
-      genre: 'Science Fiction',
-      publication_year: 1949,
+      movie: 'Inception',
+      theater: 'Screen 2',
+      ticketsAvailable: 90,
+      ticketPrice: 11.0,
+      showDate: 'May 10, 2024',
+      showTime: '01:30 PM',
     },
     {
-      id: 4,
-      title: 'Pride and Prejudice',
-      author: 'Jane Austen',
-      genre: 'Romance',
-      publication_year: 1813,
+      id: 2,
+      movie: 'Interstellar',
+      theater: 'Screen 3',
+      ticketsAvailable: 100,
+      ticketPrice: 9.75,
+      showDate: 'May 10, 2024',
+      showTime: '04:45 PM',
     },
     {
       id: 5,
-      title: 'The Catcher in the Rye',
-      author: 'J.D. Salinger',
-      genre: 'Fiction',
-      publication_year: 1951,
+      movie: 'The Dark Knight',
+      theater: 'Screen 4',
+      ticketsAvailable: 80,
+      ticketPrice: 12.0,
+      showDate: 'May 10, 2024',
+      showTime: '08:15 PM',
+    },
+    {
+      id: 4,
+      movie: 'Avatar',
+      theater: 'Screen 5',
+      ticketsAvailable: 18,
+      ticketPrice: 10.0,
+      showDate: 'May 10, 2024',
+      showTime: '10:30 PM',
     },
   ];
-
   constructor() {}
 
-  getBooks(): IBook[] {
-    return this.data
+  getAllMovies(): IMovie[] {
+    return this.data;
   }
 
-  getBookById(id: number): IBook | undefined {
-    return this.data.find((book) => book.id == id)
+  getMovieById(id: number): IMovie {
+    return this.data.find((movie) => movie.id === id) as IMovie;
   }
 }

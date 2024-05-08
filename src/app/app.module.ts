@@ -4,23 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { NewBookComponent } from './pages/new-book/new-book.component';
-import { BookDetailsComponent } from './pages/book-details/book-details.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CenturyPipe } from './pipes/century.pipe';
+import { EditMovieComponent } from './pages/edit-movie/edit-movie.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NewBookComponent,
-    BookDetailsComponent,
-    CenturyPipe
+    EditMovieComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

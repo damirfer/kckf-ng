@@ -1,25 +1,28 @@
-<button (click)="navigateToNew()">Add book</button>
-<table>
+<button (click)="showTable = !showTable">{{showTable ? "Hide Table": "Show Table"}}</button>
+<table *ngIf="showTable">
     <thead>
-      <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Genre</th>
-        <th>Publication Year</th>
-        <th>Century</th>
-        <th>Action</th>
-      </tr>
+        <tr>
+            <th>Movie</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Theater</th>
+            <th>Price</th>
+            <th>No. Tickets</th>
+            <th>Action</th>
+        </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let book of bookList">
-        <th>{{book.title}}</th>
-        <td>{{book.author}}</td>
-        <td>{{book.genre}}</td>
-        <td [style.color]="book.publication_year < 1900 ? 'red' : 'green'">{{book.publication_year}}</td>
-        <td>{{book.publication_year | century }}</td>
-        <td>
-            <a [routerLink]="['/details', book.id]">Details</a>
-        </td>
-      </tr>
+        <tr *ngFor="let movie of movies">
+            <th>{{movie.movie}}</th>
+            <td>{{movie.showDate}}</td>
+            <td>{{movie.showTime}}</td>
+            <td>{{movie.theater}}</td>
+            <td>{{movie.ticketPrice | currency:'EUR'}}</td>
+            <td>{{movie.ticketsAvailable < 20 ? 'Only ' + movie.ticketsAvailable + ' tickets left' :
+                    movie.ticketsAvailable}}</td>
+            <td>
+                <a [routerLink]="['/edit',movie.id]">Edit</a>
+            </td>
+        </tr>
     </tbody>
 </table>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { IBook } from 'src/app/models/IBook';
+import { IMovie } from 'src/app/models/IMovie';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -9,12 +8,10 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  bookList: IBook[] = []
-  constructor(private dataService: DataService, private router: Router){
-    this.bookList = dataService.getBooks();
-  }
+  movies: IMovie[] = [];
+  showTable: boolean = true;
 
-  public navigateToNew(): void {
-    this.router.navigate(['/new'])
+  constructor(private dataService: DataService) {
+    this.movies = this.dataService.getAllMovies();
   }
 }

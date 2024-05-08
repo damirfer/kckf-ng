@@ -1,0 +1,27 @@
+<form #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm.value)">
+    <div>
+        <label for="movie">Movie:</label>
+        <input type="text" id="movie" name="movie" [(ngModel)]="movie.movie" required>
+    </div>
+    <div>
+        <label for="theater">Theater:</label>
+        <input type="text" id="theater" name="theater" [(ngModel)]="movie.theater" required>
+    </div>
+    <div>
+        <label for="ticketsAvailable">Tickets Available:</label>
+        <input type="number" id="ticketsAvailable" name="ticketsAvailable" [(ngModel)]="movie.ticketsAvailable" required>
+    </div>
+    <div>
+        <label for="ticketPrice">Ticket Price:</label>
+        <input type="number" id="ticketPrice" name="ticketPrice" [(ngModel)]="movie.ticketPrice" required>
+    </div>
+    <div>
+        <label for="showDate">Show Date:</label>
+        <input type="text" id="showDate" name="showDate" [(ngModel)]="movie.showDate" required>
+    </div>
+    <div>
+        <label for="showTime">Show Time:</label>
+        <input type="text" id="showTime" name="showTime" [(ngModel)]="movie.showTime" required>
+    </div>
+    <button type="submit" [disabled]="movieForm.invalid">Submit</button>
+</form>

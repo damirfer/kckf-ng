@@ -58,6 +58,6 @@ export class DataService {
   }
 
   getMovieById(id: number): IMovie {
-    return this.data.find((movie) => movie.id === id) as IMovie;
+    return this.data.find((movie) => movie.id == id) as IMovie;
   }
 }

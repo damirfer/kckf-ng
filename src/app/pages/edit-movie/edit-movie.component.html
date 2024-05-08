@@ -9,11 +9,11 @@
     </div>
     <div>
         <label for="ticketsAvailable">Tickets Available:</label>
-        <input type="number" id="ticketsAvailable" name="ticketsAvailable" [(ngModel)]="movie.ticketsAvailable" required>
+        <input type="number" id="ticketsAvailable" name="ticketsAvailable" [(ngModel)]="movie.ticketsAvailable" required min="1">
     </div>
     <div>
         <label for="ticketPrice">Ticket Price:</label>
-        <input type="number" id="ticketPrice" name="ticketPrice" [(ngModel)]="movie.ticketPrice" required>
+        <input type="number" id="ticketPrice" name="ticketPrice" [(ngModel)]="movie.ticketPrice" required min="1">
     </div>
     <div>
         <label for="showDate">Show Date:</label>

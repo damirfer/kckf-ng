@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IMovie } from 'src/app/models/IMovie';
 import { DataService } from 'src/app/services/data.service';
 
@@ -18,12 +19,12 @@ export class EditMovieComponent {
     showTime: '',
   };
 
-  constructor(private dataService: DataService) {
-    this.movie = this.dataService.getMovieById(1);
+  constructor(private dataService: DataService, private route: ActivatedRoute) {
+    let id = this.route.snapshot.params['id'] as number;
+    this.movie = this.dataService.getMovieById(id);
   }
 
   onSubmit(formData: IMovie) {
     console.log(formData);
-    // Perform submission logic here
   }
 }

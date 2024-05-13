@@ -4,14 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { EditMovieComponent } from './pages/edit-movie/edit-movie.component';
 import { FormsModule } from '@angular/forms';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NavComponent } from './components/nav/nav.component';
+import { UrgentComponent } from './pages/urgent/urgent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    EditMovieComponent
+    NotFoundComponent,
+    NavComponent,
+    UrgentComponent
   ],
   imports: [
     BrowserModule,

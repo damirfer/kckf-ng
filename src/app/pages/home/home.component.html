@@ -2,26 +2,24 @@
 <table *ngIf="showTable">
     <thead>
         <tr>
-            <th>Movie</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Theater</th>
-            <th>Price</th>
-            <th>No. Tickets</th>
+            <th>Task</th>
+            <th>Desc</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+            <th>Completed</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let movie of movies">
-            <th>{{movie.movie}}</th>
-            <td>{{movie.showDate}}</td>
-            <td>{{movie.showTime}}</td>
-            <td>{{movie.theater}}</td>
-            <td>{{movie.ticketPrice | currency:'EUR'}}</td>
-            <td>{{movie.ticketsAvailable < 20 ? 'Only ' + movie.ticketsAvailable + ' tickets left' :
-                    movie.ticketsAvailable}}</td>
+        <tr *ngFor="let todo of todoList">
+            <th>{{todo.task}}</th>
+            <td>{{todo.description}}</td>
+            <td>{{todo.dueDate}}</td>
+            <td [style.color]="todo.priority === 'High' ? 'red' 
+        : (todo.priority === 'Low' ? 'green' : '')">{{todo.priority}}</td>
+            <td>{{todo.completed ? 'Complete':'To Do'}}</td>
             <td>
-                <a [routerLink]="['/edit',movie.id]">Edit</a>
+                <button (click)="todo.completed = !todo.completed">{{"Action"}}</button>
             </td>
         </tr>
     </tbody>

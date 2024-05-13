@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { ITodo } from 'src/app/models/ITodo';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-urgent',
+  templateUrl: './urgent.component.html',
+  styleUrls: ['./urgent.component.css']
 })
-export class HomeComponent {
+export class UrgentComponent {
   todoList: ITodo[] = [
     {
       "id": 1,
@@ -49,6 +49,9 @@ export class HomeComponent {
       "completed": false
     }
   ]
-  showTable = true
   
+
+  constructor() {
+    this.todoList = this.todoList.filter(todo => todo.priority === 'High');
+  }
 }

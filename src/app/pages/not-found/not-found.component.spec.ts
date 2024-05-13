@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditMovieComponent } from './edit-movie.component';
+import { NotFoundComponent } from './not-found.component';
 
-describe('EditMovieComponent', () => {
-  let component: EditMovieComponent;
-  let fixture: ComponentFixture<EditMovieComponent>;
+describe('NotFoundComponent', () => {
+  let component: NotFoundComponent;
+  let fixture: ComponentFixture<NotFoundComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [EditMovieComponent]
+      declarations: [NotFoundComponent]
     });
-    fixture = TestBed.createComponent(EditMovieComponent);
+    fixture = TestBed.createComponent(NotFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

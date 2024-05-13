@@ -1,87 +1,101 @@
-### Exam Four
+# Exam five
 
-1. Generirati novi Angular projekat na Dekstop-u,
-ime projekta postaviti kao vaše ImePrezime
+1. Kreirati novi Angular projekat na Desktop, ime projekta
+postaviti kao vaše ImePrezime.
+ - Dodati Picocss stylesheet 
 
 2. Generisati sljedeće komponente: HomeComponent,
-EditMovieComponent
+NavComponent, UrgentComponent i
+NotFoundComponent
+ 
+3. NavComponent dodati na AppComponent, kako bi ova
+komponenta mogla biti stalno vidljiva. Na NavComponent
+potrebno je dodati navigacijsku traku. Na navigacijskoj traci potrebno da se nalaze
+sljedeća dva linka: Home i Urgent. Te nakon kreiranja
+navigacijske trake potrebno je rutirati dodane stavke na
+način da se otvaraju HomeComponent ili
+UrgentComponent.
+ 
+4. Kreirati interface klasu za listu zadataka koju ćemo
+koristiti kroz cijelu aplikaciju. Lista zadataka se nalazi na
+dnu dokumenta, potrebno je dodati sve propertije ove liste
+unutar interface klase. Te svugdje prilikom korištenja liste
+incijalizovati tu listu pomoću interface-a koji kreirate.
+ 
+5. Na HomeComponent potrebno je uraditi sljedeće stavke:
+- Kreirati listu zadataka
+- Prikazati listu zadataka na stranici korištenjem tabele
+- Tabelu formatirati na način ukoliko je priority zadatka 'High'
+ boju teksta priority polja obojiti u crveno, a
+ukoliko je priority 'Low' boju teksta obojiti u zeleno.
+- Status formatirati na način da ukoliko je completed true,
+da bude ispisano "Completed", a ukoliko je completed false,
+da bude ispisano "To Do"
+- Potrebno je dodati Action kolonu i unutar nje button ,
+tako da ukoliko se klikne na status Completed određenog
+zadatka da se isti prebaci u To Do i obratno.
+ 
+6. Potrebno je postaviti da se HomeComponent učitava
+defaultno prilikom pokretanja projekta.
 
-3. Dodati eksterni style za PicoCss
-
-4. Kreirati interface klasu za listu filmova koju ćemo koristiti kroz cijelu aplikaciju.
-Lista filmova se nalazi na dnu dokumenta, potrebno je dodati sve propertije ove liste unutar interface klase. Na svim mjestima prilikom korištenja liste inicijalizirati tu listu pomoću interface-a koji kreirate.
-
-5. Kreirati DataService sa dvije funkcije:
-- getMovies koja će vraćati sve filmove
-- getMoviesById koja će vraćati film pomoću Id-a
-
-6. Na HomeComponent potrebno je uraditi sljedeće stavke:
-- Prikazati listu filmova u tabeli sa svim detaljima
-- Dodati kolonu Action u kojoj će se nalaziti link natpisa Edit koji vodi na EditMovieComponent
-- Iznad tabele dodati dugme "Hide" koje će sakrivati/prikazivati tabelu
-- Dodati pipe za formatiranje cijene i postaviti cijenu kao euro
-- Ako je broj dostupnih karata manji od 20, prikazati poruku "Only x tickets left"
-
-7. Na EditMovieComponent potrebno je uraditi sljedeće stavke:
-- Prikazati detalje odabranog filma unutar forme (Template Driven ili Reactive Form)
-- Omogućiti korisniku da izmijeni podatke o filmu i na save prikazati novi film u konzoli
-
-8. Dodati validaciju na Formi u EditMovieComponent:
-- Polje "Movie" ne smije biti prazno
-- Polje "Theater" ne smije biti prazno
-- Polje "Tickets Available" ne smije biti prazno i mora biti broj veći od 0
-- Polje "Ticket Price" ne smije biti prazno i mora biti broj veći od 0
-- Polje "Show Date" ne smije biti prazno
-- Polje "Show Time" ne smije biti prazno
-
-9. Rutirati sve nepostojeće putanje na HomeComponent
-
+7.  Na UrgentComponent je potrebno uraditi sljedeće
+stavke:
+- Kreirati listu zadataka samo onih koji su 'High' priority
+- Za svaki zadatak ispisati
+samo naziv zadatka i description.
+ 
+8. Na UrgentComponent iznad tabele zadataka dodati
+button koji će imati mogućnost da sakrije ili prikaže cijelu
+tabelu. To znači da ukoliko je tabela prikazana, potrebno je
+da button ima naziv Sakrij tabelu i klikom na button da se
+tabela sakrije i obratno.
+ 
+9. Postaviti Na NotFoundComponent tekst
+koji kaže da pretraživana stranica ne postoji, te na ovu
+komponentu rutirati sve nepostojeće rute.
+ 
+Statička lista zadataka:
 ```json
 [
-  { 
-    id: 1,
-    movie: "The Matrix",
-    theater: "Screen 1",
-    ticketsAvailable: 120,
-    ticketPrice: 10.50,
-    showDate: "May 10, 2024",
-    showTime: "10:00 AM"
+  {
+    "id": 1,
+    "task": "Buy groceries",
+    "description": "Milk, eggs, bread, vegetables",
+    "dueDate": "2024-05-15",
+    "priority": "High",
+    "completed": false
   },
-  { 
-    id: 3,
-    movie: "Inception",
-    theater: "Screen 2",
-    ticketsAvailable: 90,
-    ticketPrice: 11.00,
-    showDate: "May 10, 2024",
-    showTime: "01:30 PM"
+  {
+    "id": 2,
+    "task": "Finish homework",
+    "description": "Complete math assignment",
+    "dueDate": "2024-05-13",
+    "priority": "Medium",
+    "completed": false
   },
-  { 
-    id: 2,
-    movie: "Interstellar",
-    theater: "Screen 3",
-    ticketsAvailable: 100,
-    ticketPrice: 9.75,
-    showDate: "May 10, 2024",
-    showTime: "04:45 PM"
+  {
+    "id": 3,
+    "task": "Call mom",
+    "description": "Wish her happy birthday",
+    "dueDate": "2024-05-12",
+    "priority": "Low",
+    "completed": false
   },
-  { 
-    id: 5,
-    movie: "The Dark Knight",
-    theater: "Screen 4",
-    ticketsAvailable: 80,
-    ticketPrice: 12.00,
-    showDate: "May 10, 2024",
-    showTime: "08:15 PM"
+  {
+    "id": 4,
+    "task": "Go for a run",
+    "description": "Run for 30 minutes",
+    "dueDate": null,
+    "priority": "Medium",
+    "completed": false
   },
-  { 
-    id: 4,
-    movie: "Avatar",
-    theater: "Screen 5",
-    ticketsAvailable: 18,
-    ticketPrice: 10.00,
-    showDate: "May 10, 2024",
-    showTime: "10:30 PM"
+  {
+    "id": 5,
+    "task": "Clean the house",
+    "description": "Vacuum, mop floors, clean windows",
+    "dueDate": null,
+    "priority": "High",
+    "completed": false
   }
-];
+]
 ```

@@ -85,7 +85,7 @@ Statička lista zadataka:
     "id": 4,
     "task": "Go for a run",
     "description": "Run for 30 minutes",
-    "dueDate": null,
+    "dueDate": "2024-05-12",
     "priority": "Medium",
     "completed": false
   },
@@ -93,7 +93,7 @@ Statička lista zadataka:
     "id": 5,
     "task": "Clean the house",
     "description": "Vacuum, mop floors, clean windows",
-    "dueDate": null,
+    "dueDate": "2024-05-12",
     "priority": "High",
     "completed": false
   }
